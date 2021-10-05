@@ -24,7 +24,7 @@ trait ManagesTrees
         }
 
         return new Tree($this->post('tree', [
-            'enterpriseId' => '4c6e672d',
+            'enterpriseId' => $enterpriseId,
             'user' => $user,
             'treeCount' => $amount,
             'projectId' => (string)$projectId,

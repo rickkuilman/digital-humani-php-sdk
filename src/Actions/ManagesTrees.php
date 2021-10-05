@@ -1,8 +1,8 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk\Actions;
+namespace Rickkuilman\DigitalHumaniPhpSdk\Actions;
 
-use Rickkuilman\DigitalHumaniSdk\Resources\Tree;
+use Rickkuilman\DigitalHumaniPhpSdk\Resources\Tree;
 
 trait ManagesTrees
 {
@@ -24,7 +24,7 @@ trait ManagesTrees
         }
 
         return new Tree($this->post('tree', [
-            'enterpriseId' => '4c6e672d',
+            'enterpriseId' => $enterpriseId,
             'user' => $user,
             'treeCount' => $amount,
             'projectId' => (string)$projectId,

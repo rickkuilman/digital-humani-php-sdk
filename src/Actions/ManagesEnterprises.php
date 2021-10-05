@@ -1,9 +1,9 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk\Actions;
+namespace Rickkuilman\DigitalHumaniPhpSdk\Actions;
 
 use Carbon\Carbon;
-use Rickkuilman\DigitalHumaniSdk\Resources\Enterprise;
+use Rickkuilman\DigitalHumaniPhpSdk\Resources\Enterprise;
 
 trait ManagesEnterprises
 {

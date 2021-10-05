@@ -1,6 +1,6 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk\Resources;
+namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
 class Tree extends Resource
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk\Resources;
+namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
-use Rickkuilman\DigitalHumaniSdk\DigitalHumani;
+use Rickkuilman\DigitalHumaniPhpSdk\DigitalHumani;
 
 class Resource
 {

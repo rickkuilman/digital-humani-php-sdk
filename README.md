@@ -1,8 +1,8 @@
-# 🌲 Digital Humani - PHP SDK 
+# 🌳 Digital Humani - PHP SDK
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk)
-[![Total Downloads](https://img.shields.io/packagist/dt/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk)
-![GitHub Actions](https://github.com/rickkuilman/digital-humani-php-sdk/actions/workflows/main.yml/badge.svg)
+![](https://user-images.githubusercontent.com/7881219/136075581-dff52c1f-d99d-459e-8ca7-734082daa686.png)
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) [![Total Downloads](https://img.shields.io/packagist/dt/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) ![GitHub Actions](https://github.com/rickkuilman/digital-humani-php-sdk/actions/workflows/main.yml/badge.svg)
 
 Unofficial PHP SDK for DigitalHumani's RaaS (Reforestation-as-a-Service)
 
@@ -16,23 +16,20 @@ composer require rickkuilman/digital-humani-php-sdk
 
 ## Preparation
 
-- Create an account on [DigitalHumani,com](https://my.digitalhumani.com/register) and grab your API key from the "
-  Developer" menu item. You use the sandbox mode by default.
-
-- Publish the config file and update `.env` file if needed.
-
-```bash
-php artisan vendor:publish --provider="Rickkuilman\DigitalHumaniSdk\DigitalHumaniServiceProvider" --tag=config
-```
+- Create a [sandbox](https://my.sandbox.digitalhumani.com/register) or [production](https://my.digitalhumani.com/register) account on DigitalHumani.com.
+- Grab your Enterprise ID and API Key from the "Developer" tab.
 
 ## Basic Usage
 
 ```php
-$digitalHumani = new DigitalHumani(API_TOKEN);
+// Create new instance
+$digitalHumani = new DigitalHumani($apiKey);
+
+// Plant a tree
+$digitalHumani->plantTree($organisationId, 'rick@example.com');
 ```
 
-Using the `DigitalHumani` instance you may perform multiple actions as well as retrieve the different
-resources [DigitalHumani's API](https://digitalhumani.com/docs/) provides:
+Using the `DigitalHumani` instance you may perform multiple actions as well as retrieve the different resources [DigitalHumani's API](https://digitalhumani.com/docs/) provides:
 
 ### Managing Enterprises
 
@@ -72,7 +69,17 @@ $digitalHumani->tree('9f05511e-56c6-40f7-b5ca-e25567991dc1');
 $digitalHumani->countTreesPlantedByUser('4c6e672d', 'rick@example.com');
 ```
 
-Happy planting! 🌳🌳🌳
+### Switch to production environment
+
+```php
+// Set the second parameter to "true"
+$digitalHumani = new DigitalHumani($apiKey, true);
+
+// ..or use a method
+$digitalHumani->useProductionEnvironment();
+```
+
+Happy planting! 🌳
 
 ## Changelog
 

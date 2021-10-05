@@ -33,14 +33,23 @@ class DigitalHumani
     public HttpClient $guzzle;
 
     /**
+     * Base URL of Digital Humani
+     *
+     * @var string
+     */
+    public string $baseUrl;
+
+    /**
      * Create a new Forge instance.
      *
      * @param string|null $apiKey
      * @param HttpClient|null $guzzle
      * @return void
      */
-    public function __construct(string $apiKey = null, HttpClient $guzzle = null)
+    public function __construct(string $apiKey = null, bool $useProduction = false, HttpClient $guzzle = null)
     {
+        $this->useProductionEnvironment($useProduction);
+
         if (!is_null($apiKey)) {
             $this->setApiKey($apiKey, $guzzle);
         }
@@ -61,13 +70,8 @@ class DigitalHumani
     {
         $this->apiKey = $apiKey;
 
-        $baseUrl = self::SANDBOX_URL;
-        if (config('digital-humani.use_production')) {
-            $baseUrl = self::PRODUCTION_URL;
-        }
-
         $this->guzzle = $guzzle ?: new HttpClient([
-            'base_uri' => $baseUrl,
+            'base_uri' => $this->baseUrl,
             'headers' => [
                 'X-Api-Key' => $this->apiKey,
                 'Accept' => 'application/json',
@@ -85,7 +89,7 @@ class DigitalHumani
      */
     protected function defaultProjectId(): string
     {
-        return config('digital-humani.default_project') ?? self::DEFAULT_PROJECT_ID;
+        return self::DEFAULT_PROJECT_ID;
     }
 
     /**
@@ -102,5 +106,40 @@ class DigitalHumani
             return new $class($data + $extraData, $this);
         }, $collection);
     }
+
+    /**
+     * Use the production environment
+     *
+     * @param bool $useProduction
+     */
+    public function useProductionEnvironment(bool $useProduction = true)
+    {
+        $useProduction
+            ? $this->setBaseUrl(self::PRODUCTION_URL)
+            : $this->useSandboxEnvironment();
+    }
+
+    /**
+     * Use the sandbox environment
+     *
+     * @param bool $useSandbox
+     */
+    public function useSandboxEnvironment(bool $useSandbox = true)
+    {
+        $useSandbox
+            ? $this->setBaseUrl(self::SANDBOX_URL)
+            : $this->useProductionEnvironment();
+    }
+
+    /**
+     * Set the base url
+     *
+     * @param string $baseUrl
+     */
+    public function setBaseUrl(string $baseUrl)
+    {
+        $this->baseUrl = $baseUrl;
+    }
+
 }
 

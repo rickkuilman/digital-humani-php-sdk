@@ -1,8 +1,6 @@
 # 🌳 Digital Humani - PHP SDK
 
-![](https://user-images.githubusercontent.com/7881219/136075581-dff52c1f-d99d-459e-8ca7-734082daa686.png)
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) [![Total Downloads](https://img.shields.io/packagist/dt/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) ![GitHub Actions](https://github.com/rickkuilman/digital-humani-php-sdk/actions/workflows/main.yml/badge.svg)
+[![Latest Stable Version](http://poser.pugx.org/rickkuilman/digital-humani-php-sdk/v)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) [![Total Downloads](http://poser.pugx.org/rickkuilman/digital-humani-php-sdk/downloads)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) [![Latest Unstable Version](http://poser.pugx.org/rickkuilman/digital-humani-php-sdk/v/unstable)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) [![License](http://poser.pugx.org/rickkuilman/digital-humani-php-sdk/license)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk) [![PHP Version Require](http://poser.pugx.org/rickkuilman/digital-humani-php-sdk/require/php)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk)
 
 Unofficial PHP SDK for DigitalHumani's RaaS (Reforestation-as-a-Service)
 

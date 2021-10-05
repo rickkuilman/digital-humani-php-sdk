@@ -1,8 +1,8 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk\Actions;
+namespace Rickkuilman\DigitalHumaniPhpSdk\Actions;
 
-use Rickkuilman\DigitalHumaniSdk\Resources\Project;
+use Rickkuilman\DigitalHumaniPhpSdk\Resources\Project;
 
 trait ManagesProjects
 {

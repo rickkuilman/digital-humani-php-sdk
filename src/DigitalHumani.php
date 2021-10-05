@@ -1,11 +1,11 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk;
+namespace Rickkuilman\DigitalHumaniPhpSdk;
 
 use GuzzleHttp\Client as HttpClient;
-use Rickkuilman\DigitalHumaniSdk\Actions\ManagesEnterprises;
-use Rickkuilman\DigitalHumaniSdk\Actions\ManagesProjects;
-use Rickkuilman\DigitalHumaniSdk\Actions\ManagesTrees;
+use Rickkuilman\DigitalHumaniPhpSdk\Actions\ManagesEnterprises;
+use Rickkuilman\DigitalHumaniPhpSdk\Actions\ManagesProjects;
+use Rickkuilman\DigitalHumaniPhpSdk\Actions\ManagesTrees;
 
 class DigitalHumani
 {

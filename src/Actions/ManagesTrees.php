@@ -1,8 +1,8 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk\Actions;
+namespace Rickkuilman\DigitalHumaniPhpSdk\Actions;
 
-use Rickkuilman\DigitalHumaniSdk\Resources\Tree;
+use Rickkuilman\DigitalHumaniPhpSdk\Resources\Tree;
 
 trait ManagesTrees
 {

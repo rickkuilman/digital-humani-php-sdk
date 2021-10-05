@@ -1,8 +1,8 @@
 # 🌲 Digital Humani - PHP SDK 
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/rickkuilman/digital-humani-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-sdk)
-[![Total Downloads](https://img.shields.io/packagist/dt/rickkuilman/digital-humani-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-sdk)
-![GitHub Actions](https://github.com/rickkuilman/digital-humani-sdk/actions/workflows/main.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk)
+[![Total Downloads](https://img.shields.io/packagist/dt/rickkuilman/digital-humani-php-sdk.svg?style=flat-square)](https://packagist.org/packages/rickkuilman/digital-humani-php-sdk)
+![GitHub Actions](https://github.com/rickkuilman/digital-humani-php-sdk/actions/workflows/main.yml/badge.svg)
 
 Unofficial PHP SDK for DigitalHumani's RaaS (Reforestation-as-a-Service)
 
@@ -11,7 +11,7 @@ Unofficial PHP SDK for DigitalHumani's RaaS (Reforestation-as-a-Service)
 You can install the package via composer:
 
 ```bash
-composer require rickkuilman/digital-humani-sdk
+composer require rickkuilman/digital-humani-php-sdk
 ```
 
 ## Preparation
@@ -95,6 +95,6 @@ If you discover any security related issues, please email rickkuilman@gmail.com 
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
+## PHP Package Boilerplate
 
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com). ❤️
+This package was generated using the [PHP Package Boilerplate](https://laravelpackageboilerplate.com) by [Beyond Code](http://beyondco.de/).

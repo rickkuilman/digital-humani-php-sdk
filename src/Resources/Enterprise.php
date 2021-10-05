@@ -1,6 +1,6 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk\Resources;
+namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
 use Carbon\Carbon;
 

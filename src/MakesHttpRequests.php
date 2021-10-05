@@ -1,6 +1,6 @@
 <?php
 
-namespace Rickkuilman\DigitalHumaniSdk;
+namespace Rickkuilman\DigitalHumaniPhpSdk;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;

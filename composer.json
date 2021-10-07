@@ -16,9 +16,13 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.3.1|^7.0",
+        "nesbot/carbon": "^2.53"
     },
     "require-dev": {
+        "mockery/mockery": "^1.3.1",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {

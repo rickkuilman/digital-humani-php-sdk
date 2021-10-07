@@ -72,6 +72,7 @@ class DigitalHumani
 
         $this->guzzle = $guzzle ?: new HttpClient([
             'base_uri' => $this->baseUrl,
+            'http_errors' => false,
             'headers' => [
                 'X-Api-Key' => $this->apiKey,
                 'Accept' => 'application/json',
@@ -139,6 +140,16 @@ class DigitalHumani
     public function setBaseUrl(string $baseUrl)
     {
         $this->baseUrl = $baseUrl;
+    }
+
+    /**
+     * Returns whether the production environment is used.
+     *
+     * @return bool
+     */
+    public function usesProductionEnvironment(): bool
+    {
+        return $this->baseUrl === self::PRODUCTION_URL;
     }
 
 }

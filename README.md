@@ -36,11 +36,11 @@ Using the `DigitalHumani` instance you may perform multiple actions as well as r
 $enterprise = $digitalHumani->enterprise('4c6e672d')
     ->treeCount(); // ..and count trees for this enterprise
 
-// Count trees for an enterprise for any range of date
-$digitalHumani->treeCount('4c6e672d', Carbon::make('2021-01-01'), Carbon::make('2022-01-01'));
+// Count trees for a range of dates
+$enterprise->treeCount(Carbon::make('2021-01-01'), Carbon::make('2022-01-01'));
 
-// Count trees for an enterprise by month
-$digitalHumani->treeCountForMonth('4c6e672d', Carbon::make('2021-08'));
+// Count trees for specific month
+$enterprise->treeCountForMonth(Carbon::make('2021-08'));
 ```
 
 ### Managing Projects

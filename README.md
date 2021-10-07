@@ -24,7 +24,7 @@ composer require rickkuilman/digital-humani-php-sdk
 $digitalHumani = new DigitalHumani($apiKey);
 
 // Plant a tree
-$digitalHumani->plantTree($organisationId, 'rick@example.com');
+$digitalHumani->plantTree($enterpriseId, 'rick@example.com');
 ```
 
 Using the `DigitalHumani` instance you may perform multiple actions as well as retrieve the different resources [DigitalHumani's API](https://digitalhumani.com/docs/) provides:

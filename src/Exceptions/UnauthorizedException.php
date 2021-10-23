@@ -12,11 +12,6 @@ class UnauthorizedException extends Exception
      *
      * @return void
      */
-    /**
-     * Create a new exception instance.
-     *
-     * @return void
-     */
     public function __construct(DigitalHumani $digitalHumani)
     {
         $environment = 'sandbox';

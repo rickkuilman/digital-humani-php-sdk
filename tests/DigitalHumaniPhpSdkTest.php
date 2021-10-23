@@ -20,7 +20,7 @@ class DigitalHumaniPhpSdkTest extends TestCase
 
     public function test_making_basic_requests()
     {
-        $digitalHumani = new DigitalHumani('abc', false, $http = Mockery::mock(Client::class));
+        $digitalHumani = new DigitalHumani('abc', '4c6e672d', false, $http = Mockery::mock(Client::class));
 
         $http->shouldReceive('request')
             ->once()
@@ -36,7 +36,7 @@ class DigitalHumaniPhpSdkTest extends TestCase
     {
         $this->expectException(NotFoundException::class);
 
-        $digitalHumani = new DigitalHumani('abc', false, $http = Mockery::mock(Client::class));
+        $digitalHumani = new DigitalHumani('abc', '4c6e672d', false, $http = Mockery::mock(Client::class));
 
         $http->shouldReceive('request')
             ->once()
@@ -52,7 +52,7 @@ class DigitalHumaniPhpSdkTest extends TestCase
     {
         $this->expectException(UnauthorizedException::class);
 
-        $digitalHumani = new DigitalHumani('abc', false, $http = Mockery::mock(Client::class));
+        $digitalHumani = new DigitalHumani('abc', '4c6e672d', false, $http = Mockery::mock(Client::class));
 
         $http->shouldReceive('request')
             ->once()
@@ -68,7 +68,7 @@ class DigitalHumaniPhpSdkTest extends TestCase
     {
         $this->expectException(ForbiddenException::class);
 
-        $digitalHumani = new DigitalHumani('abc', false, $http = Mockery::mock(Client::class));
+        $digitalHumani = new DigitalHumani('abc', '4c6e672d', false, $http = Mockery::mock(Client::class));
 
         $http->shouldReceive('request')
             ->once()

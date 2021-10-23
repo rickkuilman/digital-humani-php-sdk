@@ -53,9 +53,9 @@ class Enterprise extends Resource
     public function treeCount(Carbon $startDate = null, Carbon $endDate = null): int
     {
         return $this->digitalHumani->treeCount(
-            $this->id,
             $startDate,
             $endDate,
+            $this->id,
         );
     }
 
@@ -69,8 +69,8 @@ class Enterprise extends Resource
     public function treeCountForMonth(Carbon $month = null): int
     {
         return $this->digitalHumani->treeCountForMonth(
-            $this->id,
             $month,
+            $this->id,
         );
     }
 

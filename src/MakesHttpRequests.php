@@ -7,6 +7,7 @@ use Psr\Http\Message\ResponseInterface;
 use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\ForbiddenException;
 use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\NotFoundException;
 use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\UnauthorizedException;
+use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\BadRequestException;
 
 trait MakesHttpRequests
 {
@@ -82,6 +83,10 @@ trait MakesHttpRequests
 
         if ($response->getStatusCode() == 401) {
             throw new UnauthorizedException($this);
+        }
+
+        if ($response->getStatusCode() == 400) {
+            throw new BadRequestException((string)$response->getBody());
         }
 
         throw new Exception((string)$response->getBody());

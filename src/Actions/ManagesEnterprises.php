@@ -3,6 +3,7 @@
 namespace Rickkuilman\DigitalHumaniPhpSdk\Actions;
 
 use Carbon\Carbon;
+use Exception;
 use Rickkuilman\DigitalHumaniPhpSdk\Resources\Enterprise;
 
 trait ManagesEnterprises
@@ -12,6 +13,7 @@ trait ManagesEnterprises
      *
      * @param string $enterpriseId Id of the enterprise for which you want to get the details.
      * @return Enterprise
+     * @throws Exception
      */
     public function enterprise(string $enterpriseId): Enterprise
     {
@@ -25,6 +27,7 @@ trait ManagesEnterprises
      * @param Carbon|null $startDate Start Date of the range to specify
      * @param Carbon|null $endDate End Date of the range to specify
      * @return int
+     * @throws Exception
      */
     public function treeCount(string $enterpriseId, Carbon $startDate = null, Carbon $endDate = null): int
     {

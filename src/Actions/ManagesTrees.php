@@ -2,6 +2,7 @@
 
 namespace Rickkuilman\DigitalHumaniPhpSdk\Actions;
 
+use Exception;
 use Rickkuilman\DigitalHumaniPhpSdk\Resources\Tree;
 
 trait ManagesTrees
@@ -16,6 +17,7 @@ trait ManagesTrees
      * @param string|null $projectId Id of the reforestation project for where you want the trees to be planted.
      * Example of an id: 93333333 (Project Ids are 8 digits long)
      * @return Tree
+     * @throws Exception
      */
     public function plantTree(string $enterpriseId, string $user, int $amount = 1, string $projectId = null): Tree
     {
@@ -36,6 +38,7 @@ trait ManagesTrees
      *
      * @param string $uuid uuid of the trees for which you want to get the details.
      * @return Tree
+     * @throws Exception
      */
     public function tree(string $uuid): Tree
     {
@@ -49,6 +52,7 @@ trait ManagesTrees
      * Ids are 8 digits long)
      * @param string $user End user by whom the trees were planted. Example of an user: email@test.com
      * @return array
+     * @throws Exception
      */
     public function countTreesPlantedByUser(string $enterpriseId, string $user): array
     {

@@ -2,6 +2,7 @@
 
 namespace Rickkuilman\DigitalHumaniPhpSdk\Actions;
 
+use Exception;
 use Rickkuilman\DigitalHumaniPhpSdk\Resources\Project;
 
 trait ManagesProjects
@@ -10,6 +11,7 @@ trait ManagesProjects
      * Get list of all Projects
      *
      * @return array
+     * @throws Exception
      */
     public function projects(): array
     {
@@ -23,6 +25,7 @@ trait ManagesProjects
      *
      * @param string $projectID Id of the reforestation project for which you want to get the details
      * @return Project
+     * @throws Exception
      */
     public function project(string $projectID): Project
     {

@@ -2,6 +2,8 @@
 
 namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
+use Exception;
+
 class Project extends Resource
 {
     /**
@@ -166,6 +168,7 @@ class Project extends Resource
      * @param string $user End user by whom the trees were planted. Example of an user: email@test.com
      * @param int $amount Number of trees requested to plant. Example: 1
      * @return mixed
+     * @throws Exception
      */
     public function plantTree(string $enterpriseId, string $user, int $amount = 1)
     {

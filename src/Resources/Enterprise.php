@@ -3,6 +3,7 @@
 namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
 use Carbon\Carbon;
+use Exception;
 
 class Enterprise extends Resource
 {
@@ -47,6 +48,7 @@ class Enterprise extends Resource
      * @param Carbon|null $startDate
      * @param Carbon|null $endDate
      * @return int
+     * @throws Exception
      */
     public function treeCount(Carbon $startDate = null, Carbon $endDate = null): int
     {
@@ -62,6 +64,7 @@ class Enterprise extends Resource
      *
      * @param Carbon|null $month
      * @return int
+     * @throws Exception
      */
     public function treeCountForMonth(Carbon $month = null): int
     {

@@ -7,6 +7,7 @@ use GuzzleHttp\Psr7\Response;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use Rickkuilman\DigitalHumaniPhpSdk\DigitalHumani;
+use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\BadRequestException;
 use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\ForbiddenException;
 use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\NotFoundException;
 use Rickkuilman\DigitalHumaniPhpSdk\Exceptions\UnauthorizedException;
@@ -78,6 +79,29 @@ class DigitalHumaniPhpSdkTest extends TestCase
             );
 
         $digitalHumani->projects();
+    }
+
+    public function test_handling_400_errors()
+    {
+        $this->expectException(BadRequestException::class);
+
+        $digitalHumani = new DigitalHumani('abc', '4c6e672d', false, $http = Mockery::mock(Client::class));
+
+        $http->shouldReceive('request')
+            ->once()
+            ->with('POST', 'tree', [
+                'json' => [
+                    'enterpriseId' => '4c6e672d',
+                    'user' => 'rick@example.com',
+                    'treeCount' => 1,
+                    'projectId' => DigitalHumani::DEFAULT_PROJECT_ID,
+                ],
+            ])
+            ->andReturn(
+                new Response(400)
+            );
+
+        $digitalHumani->plantTree('rick@example.com');
     }
 
 }

@@ -6,6 +6,7 @@ use GuzzleHttp\Client as HttpClient;
 use Rickkuilman\DigitalHumaniPhpSdk\Actions\ManagesEnterprises;
 use Rickkuilman\DigitalHumaniPhpSdk\Actions\ManagesProjects;
 use Rickkuilman\DigitalHumaniPhpSdk\Actions\ManagesTrees;
+use Rickkuilman\DigitalHumaniPhpSdk\Resources\Enterprise;
 
 class DigitalHumani
 {
@@ -40,15 +41,24 @@ class DigitalHumani
     public string $baseUrl;
 
     /**
+     * @var string|null
+     */
+    public ?string $enterpriseId = null;
+
+    /**
      * Create a new Forge instance.
      *
      * @param string|null $apiKey
      * @param HttpClient|null $guzzle
      * @return void
      */
-    public function __construct(string $apiKey = null, bool $useProduction = false, HttpClient $guzzle = null)
+    public function __construct(string $apiKey = null, string $defaultEnterpriseId = null, bool $useProduction = false, HttpClient $guzzle = null)
     {
         $this->useProductionEnvironment($useProduction);
+
+        if (!is_null($defaultEnterpriseId)) {
+            $this->setEnterprise($defaultEnterpriseId);
+        }
 
         if (!is_null($apiKey)) {
             $this->setApiKey($apiKey, $guzzle);
@@ -140,6 +150,26 @@ class DigitalHumani
     public function setBaseUrl(string $baseUrl)
     {
         $this->baseUrl = $baseUrl;
+    }
+
+    /**
+     * Set enterprise by id or instance
+     *
+     * @param string|Enterprise $enterprise
+     */
+    public function setEnterprise($enterprise)
+    {
+        $this->enterpriseId = $enterprise instanceof Enterprise
+            ? $enterprise->id
+            : $enterprise;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDefaultEnterpriseId(): ?string
+    {
+        return $this->enterpriseId;
     }
 
     /**

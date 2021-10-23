@@ -2,6 +2,8 @@
 
 namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
+use Exception;
+
 class Project extends Resource
 {
     /**
@@ -161,19 +163,20 @@ class Project extends Resource
     /**
      * Plant one or many trees
      *
-     * @param string $enterpriseId Id of your enterprise. Example of an enterprise id: 11111111 (Enterprise
-     * Ids are 8 digits long)
      * @param string $user End user by whom the trees were planted. Example of an user: email@test.com
      * @param int $amount Number of trees requested to plant. Example: 1
+     * @param string|null $enterpriseId Id of your enterprise. Example of an enterprise id: 11111111 (Enterprise
+     * Ids are 8 digits long)
      * @return mixed
+     * @throws Exception
      */
-    public function plantTree(string $enterpriseId, string $user, int $amount = 1)
+    public function plantTree(string $user, int $amount = 1, string $enterpriseId = null): Tree
     {
         return $this->digitalHumani->plantTree(
-            $enterpriseId,
             $user,
             $amount,
-            $this->id
+            $this->id,
+            $enterpriseId
         );
     }
 

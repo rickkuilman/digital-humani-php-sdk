@@ -3,6 +3,7 @@
 namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
 use Carbon\Carbon;
+use Exception;
 
 class Enterprise extends Resource
 {
@@ -47,13 +48,14 @@ class Enterprise extends Resource
      * @param Carbon|null $startDate
      * @param Carbon|null $endDate
      * @return int
+     * @throws Exception
      */
     public function treeCount(Carbon $startDate = null, Carbon $endDate = null): int
     {
         return $this->digitalHumani->treeCount(
-            $this->id,
             $startDate,
             $endDate,
+            $this->id,
         );
     }
 
@@ -62,13 +64,33 @@ class Enterprise extends Resource
      *
      * @param Carbon|null $month
      * @return int
+     * @throws Exception
      */
     public function treeCountForMonth(Carbon $month = null): int
     {
         return $this->digitalHumani->treeCountForMonth(
-            $this->id,
             $month,
+            $this->id,
         );
     }
 
+    /**
+     * Plant one or many trees
+     *
+     * @param string $user End user by whom the trees were planted. Example of an user: email@test.com
+     * @param int $amount Number of trees requested to plant. Example: 1
+     * @param string|null $projectId Id of the reforestation project for where you want the trees to be planted.
+     * Example of an id: 93333333 (Project Ids are 8 digits long)
+     * @return mixed
+     * @throws Exception
+     */
+    public function plantTree(string $user, int $amount = 1, string $projectId = null): Tree
+    {
+        return $this->digitalHumani->plantTree(
+            $user,
+            $amount,
+            $projectId,
+            $this->id
+        );
+    }
 }

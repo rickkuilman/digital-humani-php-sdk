@@ -4,7 +4,7 @@ namespace Rickkuilman\DigitalHumaniPhpSdk\Resources;
 
 use Rickkuilman\DigitalHumaniPhpSdk\DigitalHumani;
 
-class Resource
+abstract Resource
 {
     /**
      * The resource attributes.
